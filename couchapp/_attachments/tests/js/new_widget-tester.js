@@ -3,6 +3,7 @@
  */
 (function( $, undefined ) {
 
+$('.top-open-requests').barchartGoogleTopOpenRequests();
 $('.open-vs-closed-bar').barRaphaelOpenClosed();
 $('.neighborhoods-sc-trends').neighborhoodsSCTrends();
 

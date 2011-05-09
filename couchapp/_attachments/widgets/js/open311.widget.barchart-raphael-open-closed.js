@@ -32,7 +32,6 @@ $.widget('widget.barRaphaelOpenClosed', $.Open311.barRaphael, {
     
     $($.Open311).bind('open311-pass-dates', function(event, fromDate, toDate){
       //console.log('event getting called');
-      alert(toDate);
       var dataOpen;
       var dataClosed;
       function getOpenData(){
@@ -150,7 +149,6 @@ $.widget('widget.barRaphaelOpenClosed', $.Open311.barRaphael, {
 	//console.log('first date: ' + firstDateInData);
 	var date;
 	var label_text_string;
-	alert(fromDate);
 	if (firstDateInData < fromDate){
 	  //date = new Date(validateDate(fromDate));
 	  date = new Date(fromDate);
