@@ -3,15 +3,24 @@
  */
 #dashboard {
   padding: 0px;
+  margin: auto auto;
+  width: 1000px;
 }
 .widget-container{
   padding: 10px;
 
 }
 
+#header {
+    background: url(http://codeforamerica.org/wp-content/uploads/2011/03/Open311V5.jpg) center center repeat-x;
+    padding: 80px 0px 0px 0px;
+    text-align: right;
+}
+
+
 .ui-widget {
   width: 310px;
-  height: 240px;
+  height: 270px;
   border: 1px solid #EEE;
   padding: 5px;
   margin-right: 10px;
@@ -42,8 +51,8 @@
 }
 
 .open-vs-closed-bar {
-	width: 700px;
-	height: 240px;
+	width: 980px;
+	height: 200px;
 }
 
 .ui-widget-header {
@@ -55,33 +64,50 @@
     font-weight: bold;
 }
 
+
+
 .column-1{ /*, .column-2 */
-  width: 830px; /*530*/
+  width: 250px; /*530*/
   float: left;
   clear: none;
+  margin: 0px 20px 10px 10px;
+  overflow: hidden;
 }
 .column-2 {
- width: 300px;
+ width: 250px;
  float: left;
  margin: 0px 20px 10px 10px;
  clear: none;
+ overflow: hidden;
+ 
 }
 .column-3 {
- width: 300px;
+ width: 400px;
  float: left;
  margin: 0px 20px 10px 10px;
  clear: none;
+ overflow: hidden;
+ 
+}
+
+.column-3 .ui-widget {
+    width: 400px;
+    height: 400px;
 }
 
 
-h1 {
-  font-size: 42px;
-  text-align: left;
-  padding: 10px 20px;
-  color: #666;
-  text-shadow: 0px 1px 2px #fefefe;
+
+#header h1 {
+  font-size: 30px;
+  text-align: right;
+  color: black;
   font-family:Helevetica,sans-serif;
-  font-variant:small-caps;
+  text-transform: uppercase;
+  background-color: white;
+  width: auto;
+  padding: 0px 10px;
+  display: inline;
+  font-weight: bold;
 }
 
 h2 {
@@ -90,8 +116,22 @@ h2 {
   color: #555;
 }
 
+h2.last-updated {
+    display: inline;
+}
+
 ui.loading {
   border: 3px solid #222222;
+}
+
+#search {width: 350px; float: left;}
+
+#search h2.ui-input-widget-header{
+    display: none;
+}
+
+#updated {
+    width: 300px float: left;
 }
 
 /*.input-widgets {

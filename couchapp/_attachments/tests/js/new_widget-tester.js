@@ -6,6 +6,9 @@
 $('.top-open-requests').barchartGoogleTopOpenRequests();
 $('.open-vs-closed-bar').barRaphaelOpenClosed();
 $('.neighborhoods-sc-trends').neighborhoodsSCTrends();
+$('.open-vs-closed').pieRaphaelOpenClosed();
+$('.map-google-example').mapGoogleExample({dataSource: 'data/ServiceRequests_Complete.json'});
+
 
 //$('.gauge').gaugeGoogleActualEstResponseTime({dataSource: 'data/ClosedServiceRequests_By_SingleServiceType_Slice'});
 

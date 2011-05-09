@@ -42,21 +42,27 @@
   <div id="container">
     <div id="dashboard">	  
       <div class="input-widgets">
-      	  <h1>Open311 Dashboard</h1>
-	  <h2 id="last-updated">Loading...</h2>
-        <div id="search" class="open311-global-input"></div>
+      <div id="header"><h1>Open311 Dashboard</h1></div>
+      <div id="search" class="open311-global-input"></div>
+      
+	 <div id="updated"> <h2 id="last-updated">Loading...</h2></div>
+
 	<div class="ui-widget open-vs-closed-bar"></div>
       </div>
-      <div class="widget-container">
+      <div>
 		  <div class="column-1">
 		      <div class="ui-widget neighborhoods-sc-trends"></div>
+		      <div class="ui-widget open-vs-closed"></div>
+		      
 		      
 		  </div>
 		  <div class="column-2">
 		      <div class="ui-widget top-open-requests"></div>
+		      <div class="ui-widget neighborhoods-sc-trends"></div>
+		      
 		  </div>
 		  <div class="column-3">
-		  </div>
+    <div class="ui-widget map-google-example"></div>  </div>
 		</div><!-- end widget-container -->
 		  
 		</div>
@@ -103,13 +109,19 @@
   <script src="../widgets/js/open311.widget.base-global-input.js"></script>
   <script src="../widgets/js/open311.widget.base-barchart-raphael.js"></script>
   <script src="../widgets/js/open311.widget.base-neighborhoods-sc-trends.js"></script>  
-  <script src="../widgets/js/open311.widget.base-barchart-google.js"></script>  
+  <script src="../widgets/js/open311.widget.base-barchart-google.js"></script>
+  <script src="../widgets/js/open311.widget.base-pie-raphael.js"></script>  
+  <script src="../widgets/js/open311.widget.base-map-google.js"></script> 
+  
+    
   
   <!-- others -->
   <script src="../widgets/js/open311.widget.global-search.js"></script>
   <script src="../widgets/js/open311.widget.barchart-raphael-open-closed.js"></script>
   <script src="../widgets/js/open311.widget.neighborhoods-sc-trends.js"></script>  
   <script src="../widgets/js/open311.widget.barchart-google-top-open-requests.js"></script>  
+  <script src="../widgets/js/open311.widget.pie-raphael-open-closed.js"></script>  
+  <script src="../widgets/js/open311.widget.example-map-google.js"></script> 
 
   
   <!-- create widgets -->
