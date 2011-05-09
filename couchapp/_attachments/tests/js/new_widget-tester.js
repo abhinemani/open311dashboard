@@ -4,6 +4,7 @@
 (function( $, undefined ) {
 
 $('.open-vs-closed-bar').barRaphaelOpenClosed();
+$('.neighborhoods-sc-trends').neighborhoodsSCTrends();
 
 //$('.gauge').gaugeGoogleActualEstResponseTime({dataSource: 'data/ClosedServiceRequests_By_SingleServiceType_Slice'});
 

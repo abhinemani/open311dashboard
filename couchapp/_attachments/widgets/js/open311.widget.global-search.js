@@ -82,12 +82,16 @@ $.widget('Open311.searchType', $.Open311.globalInput, {
           d.getUTCFullYear();
       };
 
-    fromDate = fromDate || self._$fromDate.datepicker('getDate'); 
+    fromDate = fromDate || self._$fromDate.datepicker('getDate');
     toDate = toDate || self._$toDate.datepicker('getDate');
     
     //console.log('fromDate:' + convertDate(fromDate) + 'toDate:' + convertDate(toDate));
     //trigger before the ajax call
-    $($.Open311).trigger('open311-pass-dates', [convertDate(fromDate), convertDate(toDate)]);
+
+    //$($.Open311).trigger('open311-pass-dates', [convertDate(fromDate).getTime(), convertDate(toDate).getTime()]);
+    console.log(fromDate.getTime());
+    console.log(toDate.getTime());
+    $($.Open311).trigger('open311-pass-dates', [fromDate.getTime(), toDate.getTime()]);
     /*
     $.ajax({
       url: 'http://open311.couchone.com/service-requests/_design/requests/_list/requests-json/allbytime',

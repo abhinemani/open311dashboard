@@ -49,6 +49,8 @@
       </div>
       <div class="widget-container">
 		  <div class="column-1">
+		      <div class="ui-widget neighborhoods-sc-trends"></div>
+		      
 		  </div>
 		  <div class="column-2">
 		  </div>
@@ -69,6 +71,7 @@
   //Display last update date
   $(document).ready(function(){
       $.ajax({
+	      //url: 'http://open311.couchone.com/service-requests/_design/requests/_view/open_byday_ordered_ms?group=true',
 	      url: 'http://open311.couchone.com/service-requests/_design/requests/_view/open_byday_ordered_ms?group=true',
 	      //cache: true,
 	      dataType: 'jsonp',
@@ -78,7 +81,8 @@
     });  
     
     function insert_update(data){
-      var last_date = new Date(data.rows[data.rows.length-1].key); //dates in ms
+      //var last_date = new Date(data.rows[data.rows.length-1].key); //dates in ms
+      var last_date = new Date(data.rows[data.rows.length-1].key);
       var day = last_date.getDate();
       var year = last_date.getFullYear();
       var month_array = ["January","February","March","April","May","June","July","August","September","October","November","December"];
@@ -97,10 +101,11 @@
   <script src="../widgets/js/open311.widget.base.js"></script>
   <script src="../widgets/js/open311.widget.base-global-input.js"></script>
   <script src="../widgets/js/open311.widget.base-barchart-raphael.js"></script>
-  
+  <script src="../widgets/js/open311.widget.base-neighborhoods-sc-trends.js"></script>  
   <!-- others -->
   <script src="../widgets/js/open311.widget.global-search.js"></script>
   <script src="../widgets/js/open311.widget.barchart-raphael-open-closed.js"></script>
+  <script src="../widgets/js/open311.widget.neighborhoods-sc-trends.js"></script>  
   
   <!-- create widgets -->
   <script src="js/new_widget-tester.js"></script>

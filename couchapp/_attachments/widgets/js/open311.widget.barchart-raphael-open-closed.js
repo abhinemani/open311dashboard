@@ -32,11 +32,16 @@ $.widget('widget.barRaphaelOpenClosed', $.Open311.barRaphael, {
     
     $($.Open311).bind('open311-pass-dates', function(event, fromDate, toDate){
       //console.log('event getting called');
+      alert(toDate);
       var dataOpen;
       var dataClosed;
       function getOpenData(){
 	return $.ajax({
-		  url: 'http://open311.couchone.com/service-requests/_design/requests/_view/open_byday_ordered?group=true&startkey="' + fromDate + '"&endkey="' + toDate + '"',
+		  //url: 'http://open311.couchone.com/service-requests/_design/requests/_view/open_byday_ordered?group=true&startkey="' + fromDate + '"&endkey="' + toDate + '"',
+		  url: 'http://open311.couchone.com/service-requests/_design/requests/_view/open_byday_ordered_ms?group=true&startkey=' + fromDate + '&endkey=' + toDate,
+		  //1299744000000
+		  //1304838000000		  
+		  //url: 'http://open311.couchone.com/service-requests/_design/requests/_view/open_byday_ordered_ms?group=true',
 		  dataType: 'jsonp',
 		  success: function(data) {
 		    dataOpen = data;
@@ -46,7 +51,9 @@ $.widget('widget.barRaphaelOpenClosed', $.Open311.barRaphael, {
       
       function getClosedData(){
 	return $.ajax({
-		  url: 'http://open311.couchone.com/service-requests/_design/requests/_view/closed_byday_ordered?group=true&startkey="' + fromDate + '"&endkey="' + toDate + '"',
+		  //url: 'http://open311.couchone.com/service-requests/_design/requests/_view/closed_byday_ordered?group=true&startkey="' + fromDate + '"&endkey="' + toDate + '"',
+		  url: 'http://open311.couchone.com/service-requests/_design/requests/_view/closed_byday_ordered_ms?group=true&startkey=' + fromDate + '&endkey=' + toDate,
+		  //url: 'http://open311.couchone.com/service-requests/_design/requests/_view/closed_byday_ordered_ms?group=true',
 		  dataType: 'jsonp',
 		  success: function(data) {
 		    dataClosed = data;
@@ -139,25 +146,31 @@ $.widget('widget.barRaphaelOpenClosed', $.Open311.barRaphael, {
 	var index;
 	var firstDateInData = dataOpen.rows[0].key;
 	var lastDateInData = dataOpen.rows[dataOpen.rows.length-1].key;
-	console.log('lastdateindata:' + lastDateInData);
+	//console.log('lastdateindata:' + lastDateInData);
 	//console.log('first date: ' + firstDateInData);
 	var date;
 	var label_text_string;
+	alert(fromDate);
 	if (firstDateInData < fromDate){
-	  date = new Date(validateDate(fromDate));
-	  label_text_from_string = validateDate(fromDate);
+	  //date = new Date(validateDate(fromDate));
+	  date = new Date(fromDate);
+	  var FROM_DATE_IN_MS = fromDate;
+	  //label_text_from_string = fromDate;
 	} else {
-	  date = new Date(validateDate(firstDateInData));
-	  label_text_from_string = validateDate(firstDateInData);
+	  date = new Date(firstDateInData);
+	  var FROM_DATE_IN_MS = firstDateInData;
+	  //label_text_from_string = firstDateInData;
 	}
 	
+	//alert(date);
 	/*
 	var graph_label = paper.text(200,110,label_text_from_string + " to " + validateDate(toDate));
 	graph_label.attr({"font-size": 12});
 	*/
 	//var date = new Date(validateDate(fromDate)); //this doesn't work when we don't have data starting with the fromDate
 						       //also doesn't work when there is no data for a day
-	var FROM_DATE_IN_MS = date.getTime();
+	//var FROM_DATE_IN_MS = date.getTime();
+	//var FROM_DATE_IN_MS = fromDate;
 	//var NUMBER_OF_MS_PER_DAY = 8.64 * 10e7;
 	var NUMBER_OF_MS_PER_DAY = 86400000; //24*60*60*1000
 	
@@ -170,7 +183,7 @@ $.widget('widget.barRaphaelOpenClosed', $.Open311.barRaphael, {
 		//28 * 10 + (28 - 1)*1 + 50 = 357
 		index = Math.round(((this.attr('x')/graphWidth) * graphWidth - origin)/(barWidth + spacing));
 		//reset the date object
-		date.setTime(FROM_DATE_IN_MS + index*NUMBER_OF_MS_PER_DAY);
+		date.setTime(FROM_DATE_IN_MS + index*NUMBER_OF_MS_PER_DAY); //*****
 		//console.log('index: ' + index);
 		tooltip.attr({x: this.attr('x')-.5*tooltip.attr('width') + .5*barWidth,y: this.attr('y') - tooltip.attr('height') - 10});
 		tooltip_text.attr({text: totalData[index].closedCount + ' Closed Requests\non ' + date.toDateString(), x: this.attr('x') + .5*barWidth, y:this.attr('y') - tooltip.attr('height') + 5});
