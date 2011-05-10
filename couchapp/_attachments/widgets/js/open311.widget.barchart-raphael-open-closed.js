@@ -90,8 +90,8 @@ $.widget('widget.barRaphaelOpenClosed', $.Open311.barRaphael, {
     
     var CANVAS_HEIGHT = 150;
     var origin = 20;
-    var barWidth = 13;
-    var spacing = 2;
+    var barWidth = 14;
+    var spacing = 1;
 
     var bottomLineLength = 22*(10) + 22 * 3; //28, 27
     var CANVAS_WIDTH = bottomLineLength + 50 + 200 + 400; //make this dynamic, based on number of bars
