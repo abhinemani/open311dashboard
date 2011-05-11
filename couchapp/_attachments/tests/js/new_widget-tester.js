@@ -1,32 +1,11 @@
-/**
- * testing widgets
- */
 (function( $, undefined ) {
-
 $('.top-open-requests').barchartGoogleTopOpenRequests();
 $('.open-vs-closed-bar').barRaphaelOpenClosed();
-$('.neighborhoods-sc-trends').neighborhoodsSCTrends();
+//$('.neighborhoods-sc-trends').neighborhoodsSCTrends();
 $('.open-vs-closed').pieRaphaelOpenClosed();
-$('.map-google-example').mapGoogleExample({dataSource: 'data/ServiceRequests_Complete.json'});
-
-
-//$('.gauge').gaugeGoogleActualEstResponseTime({dataSource: 'data/ClosedServiceRequests_By_SingleServiceType_Slice'});
-
-// $('.map').map();
-
-
-// Example loading events (Doesnt work)
-/*
-$('#dashboard div').bind('loading', function() {
-  alert('loading...');
-});
-$('#dashboard div').bind('loaded', function() {
-  alert('loaded');
-});
-*/
-
-// It is IMPORTANT to load the search widget last because it does a search automatically.
-// You'll want the other widgets to be initialized before data is published.
+$('.sidewalk-proportion').pieRaphaelSidewalk();
+$('.neighborhood-proportion').pieRaphaelNeighborhood();
+//$('.map-google-example').mapGoogleExample({dataSource: 'data/ServiceRequests_Complete.json'});
 $('#search').searchType();
 
 })( jQuery );

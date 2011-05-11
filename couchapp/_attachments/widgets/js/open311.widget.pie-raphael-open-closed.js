@@ -14,7 +14,7 @@ $.widget('widget.pieRaphaelOpenClosed', $.Open311.pieRaphael, {
    * of communicating the data source across all widgets.
    */
   options: {
-      title: 'Open vs Closed',
+      title: 'Open vs Closed in 2011',
     dataSource: "http://open311.couchone.com/service-requests/_design/requests/_view/allbymonth?group=true"
   },
   

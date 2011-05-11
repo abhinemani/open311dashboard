@@ -52,14 +52,13 @@
       <div>
 		  <div class="column-1">
 		      <div class="ui-widget neighborhoods-sc-trends"></div>
-		      <div class="ui-widget open-vs-closed"></div>
-		      
-		      
+		      <div class="ui-widget open-vs-closed"></div> <!-- pie -->
+		      <div class="ui-widget sidewalk-proportion"></div>
+		      <div class="ui-widget neighborhood-proportion"></div> 
 		  </div>
 		  <div class="column-2">
 		      <div class="ui-widget top-open-requests"></div>
 		      <div class="ui-widget neighborhoods-sc-trends"></div>
-		      
 		  </div>
 		  <div class="column-3">
     <div class="ui-widget map-google-example"></div>  </div>
@@ -79,7 +78,8 @@
   $(document).ready(function(){
       $.ajax({
 	      //url: 'http://open311.couchone.com/service-requests/_design/requests/_view/open_byday_ordered_ms?group=true',
-	      url: 'http://open311.couchone.com/service-requests/_design/requests/_view/open_byday_ordered_ms?group=true',
+	      //url: 'http://open311.couchone.com/service-requests/_design/requests/_view/open_byday_ordered_ms?group=true',
+	      url: 'http://ec2-50-17-130-61.compute-1.amazonaws.com:5984/service-requests/_design/requests/_view/open_byday_ordered_ms?group=true',
 	      //cache: true,
 	      dataType: 'jsonp',
 	      success: function(data){
@@ -118,10 +118,12 @@
   <!-- others -->
   <script src="../widgets/js/open311.widget.global-search.js"></script>
   <script src="../widgets/js/open311.widget.barchart-raphael-open-closed.js"></script>
-  <script src="../widgets/js/open311.widget.neighborhoods-sc-trends.js"></script>  
-  <script src="../widgets/js/open311.widget.barchart-google-top-open-requests.js"></script>  
-  <script src="../widgets/js/open311.widget.pie-raphael-open-closed.js"></script>  
-  <script src="../widgets/js/open311.widget.example-map-google.js"></script> 
+  <script src="../widgets/js/open311.widget.barchart-google-top-open-requests_2011.js"></script>
+  <script src="../widgets/js/open311.widget.pie-raphael-open-closed_2011.js"></script>
+  <script src="../widgets/js/open311.widget.pie-raphael-sidewalk_prop.js"></script>
+  <script src="../widgets/js/open311.widget.pie-raphael-neighborhood.js"></script>
+  <!-- <script src="../widgets/js/open311.widget.neighborhoods-sc-trends.js"></script>
+  <script src="../widgets/js/open311.widget.example-map-google.js"></script> -->
 
   
   <!-- create widgets -->

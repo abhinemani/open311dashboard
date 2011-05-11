@@ -9,17 +9,12 @@
 (function( $, undefined ) {
 
 $.widget('Open311.searchType', $.Open311.globalInput, {
-  /**
-   * Default options for the widget.  We need some way
-   * of communicating the data source across all widgets.
-   */
   options: {
     title: ' ',
     titleClass: 'ui-input-widget-header',
    contentClass: 'ui-input-widget-content'
   },
   
-  //Create the widget
   _create: function() {
     var self = this, dates;
     this.updateContent('<label for="open311-fromdate"></label><input type="text" class="open311-fromdate" name="open311-fromdate"/>' +
@@ -40,9 +35,7 @@ $.widget('Open311.searchType', $.Open311.globalInput, {
             dates.not(this).datepicker('option', option, date );
       }
     });
-    
-    //this._$fromDate = $(dates[0]).datepicker('setDate', '-1m');
-    this._$fromDate = $(dates[0]).datepicker('setDate', '-60d');
+    this._$fromDate = $(dates[0]).datepicker('setDate', '-71d');
     this._$toDate = $(dates[1]).datepicker('setDate', '-1d');
     
     self._bindEvents();
@@ -85,7 +78,6 @@ $.widget('Open311.searchType', $.Open311.globalInput, {
     fromDate = fromDate || self._$fromDate.datepicker('getDate');
     toDate = toDate || self._$toDate.datepicker('getDate');
     
-    //console.log('fromDate:' + convertDate(fromDate) + 'toDate:' + convertDate(toDate));
     //trigger before the ajax call
 
     //$($.Open311).trigger('open311-pass-dates', [convertDate(fromDate).getTime(), convertDate(toDate).getTime()]);
@@ -107,12 +99,7 @@ $.widget('Open311.searchType', $.Open311.globalInput, {
     });
     */
   },
-  
-  /**
-   * Destroy widget
-   */
   destroy: function() {
-    // Default destroy
     $.Widget.prototype.destroy.apply(this, arguments);
   }
 });
