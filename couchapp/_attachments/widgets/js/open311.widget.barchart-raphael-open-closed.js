@@ -65,7 +65,7 @@ $.widget('widget.barRaphaelOpenClosed', $.Open311.barRaphael, {
 	totalData[i].closedCount = dataClosed.rows[i].value;
      }
     
-    var CANVAS_HEIGHT = 170;
+    var CANVAS_HEIGHT = 160;
     var y_orig = 85;
     var origin = 70;
     var barWidth = 14;

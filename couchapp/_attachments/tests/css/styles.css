@@ -5,49 +5,66 @@
   padding: 0px;
   margin: auto auto;
   width: 1000px;
+  padding:10px;
 }
 .widget-container{
-  padding: 10px;
+  padding: 0px;
 
+}
+
+body {
+    background: #f3f3f3;
+}
+
+a img {
+    text-decoration: none;
 }
 
 #header {
-    background: url(http://codeforamerica.org/wp-content/uploads/2011/03/Open311V5.jpg) center center repeat-x;
-    padding: 80px 0px 0px 0px;
+    background: url(http://codeforamerica.org/wp-content/uploads/2011/03/Open311V5.jpg) center center;
+    width: 985px;
+    padding: 100px 0px 10px 0px;
+    height: 33px;
     text-align: right;
+    box-shadow: 3px 3px 4px #000;
+    -moz-box-shadow: 2px 2px 2px #ccc;
+    -webkit-box-shadow: 2px 2px 2px #ccc;
+    margin-bottom: 10px;
+    margin-top: 10px;
+    border-top: 15px solid #000;
 }
 
 
 .ui-widget {
   width: auto;
-  height: 270px;
-  border: 1px solid #EEE;
-  padding: 5px;
-  margin-right: 10px;
-  margin-bottom: 10px;
+  margin-right: 20px;
+  margin-bottom: 15px;
+  margin-top: 10px;
+  border-left: 1px solid #EEE; 
   box-shadow: 3px 3px 4px #000;
   -moz-box-shadow: 2px 2px 2px #ccc;
   -webkit-box-shadow: 2px 2px 2px #ccc;
-  background: #FDFDFD;
-   
+  background: #ffffff;
 }
 
 .ui-widget-content {
   /*  background: url("images/ui-bg_highlight-soft_100_eeeeee_1x100.png") repeat-x scroll 50% top #EEEEEE;*/
-    border: 1px solid #DDDDDD;
+    border: none;
     color: #444;
     background: #fff;
+    text-align: center;
+
     
 }
 .choropleth-example {
- width: 800px;
- height: 800px;
+ width: 400px;
+ height: 380px;
  
 }
 
 .sparkline {
-	width: 410px;
-	height: 100px;
+	width: 480px;
+	height: 120px;
 }
 
 .open-vs-closed-bar {
@@ -58,31 +75,43 @@
 .ui-widget-header {
    /* background: url("images/ui-bg_gloss-wave_35_f6a828_500x100.png") repeat-x scroll 50% 50% #F6A828;
    */ 
-   background: #FEFEFE;
-   border: 1px solid #FFF; /*E78F08*/
-    color: #444;
+   border:none; /*E78F08*/
+    color: #ffffff;
     font-weight: bold;
+    text-transform: uppercase;
+    text-shadow: 0 1px 0 gray;
+    background: #ccc; 
+
+    
 }
 
+.ui-widget-header a { color: #ffffff; }
 
+#grid {
+    clear: both;
+}
+
+#left-two {
+    display: inline; float: left;
+}
 
 .column-1{ /*, .column-2 */
-  width: 275px; /*530*/
+  width: 250px; /*530*/
   float: left;
   clear: none;
-  margin: 0px 10px 10px 10px;
+  margin: 0px 5px 10px 0px;
   overflow: hidden;
 }
 .column-2 {
- width: 275px;
+ width: 250px;
  float: left;
- margin: 0px 10px 10px 0px;
+ margin: 0px 0px 10px 0px;
  clear: none;
  overflow: hidden;
  
 }
 .column-3 {
- width: 420px;
+ width: 495px;
  float: left;
  margin: 0px 0px 10px 0px;
  clear: none;
@@ -90,28 +119,28 @@
  
 }
 
-.column-3 .ui-widget {
-    width: 405px;
-    height: 410px;
-}
-
-
-
 #header h1 {
   font-size: 30px;
   text-align: right;
   color: black;
-  font-family:Helevetica,sans-serif;
+  font-family: Helevetica,sans-serif;
   text-transform: uppercase;
   background-color: white;
   width: auto;
   padding: 0px 10px;
   display: inline;
   font-weight: bold;
+  text-shadow: 1px 2px 0 #CCC;
+  
+}
+
+.pie {
+    float: left;
+    width: 229px;
 }
 
 h2 {
-  margin: 0 0 5px 0;
+  margin: 0 0 0px 0;
   padding: 10px;
   color: #555;
   font-family: helvetica, arial, Sans-serif;
@@ -139,17 +168,16 @@ ui.loading {
   border-bottom: 3px solid #BBBBBB;
   margin-bottom: 10px;
 }*/
+
 .input-widgets{
   width: 100%;
-  background: #fff;
    /*margin-right: 10px;*/
-  margin-bottom: 10px;
+  margin-bottom: 0px;
   /*-moz-box-shadow: 2px 2px 2px #ccc;
   -webkit-box-shadow: 2px 2px 2px #ccc;*/
     font-family: Helevetica,Arial,sans-serif;
     font-size: 1.1em;
     color: #333;
-    padding: 10px;
    
 }
 .open311-global-input{
